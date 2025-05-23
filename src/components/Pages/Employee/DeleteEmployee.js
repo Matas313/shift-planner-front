@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DeleteEmployee.css'
+import './DeleteEmployee.css';
 
 function DeleteEmployee() {
   const [employeeId, setEmployeeId] = useState('');
@@ -23,13 +23,15 @@ function DeleteEmployee() {
   };
 
   return (
-    <div>
+    <div className="delete-employee-container">
       <h3>Ištrinti darbuotoją</h3>
+      <label htmlFor="employeeId">Darbuotojo ID</label>
       <input
+        id="employeeId"
         type="number"
         value={employeeId}
         onChange={e => setEmployeeId(e.target.value)}
-        placeholder="Darbuotojo ID"
+        placeholder="Įveskite ID"
       />
       <button onClick={handleDelete}>Ištrinti</button>
     </div>
