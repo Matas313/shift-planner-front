@@ -1,0 +1,48 @@
+.delete-employee-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+}
+
+.delete-employee-container h3 {
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.delete-employee-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.delete-employee-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.delete-employee-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-employee-container button:hover {
+  background-color: #d32f2f;
+}

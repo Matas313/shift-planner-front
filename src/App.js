@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Pages/Home';
 import EmployeePage from './components/Pages/Employee/EmployeePage'
-import ShiftForm from './components/Pages/Shift/ShiftForm'
+import ShiftPage from './components/Pages/Shift/ShiftPage';
 
 
 function App() {
@@ -13,9 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/employeeform" element={<EmployeePage />} />
-        <Route path="/shiftform" element={<ShiftForm />} />
+        <Route path="/shiftform" element={<ShiftPage />} />
       </Routes>
-
     </Router>
   );
 }

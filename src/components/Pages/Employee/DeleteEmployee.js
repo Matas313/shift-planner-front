@@ -5,22 +5,28 @@ function DeleteEmployee() {
   const [employeeId, setEmployeeId] = useState('');
 
   const handleDelete = () => {
-    fetch(`http://localhost:8080/employees/${employeeId}`, {
-      method: 'DELETE'
+  if (!employeeId) {
+    alert("Įveskite darbuotojo ID!");
+    return;
+  }
+
+  fetch(`http://localhost:8080/admins/${employeeId}`, {
+    method: 'DELETE'
+  })
+    .then(response => {
+      if (response.ok) {
+        alert('Darbuotojas sėkmingai ištrintas');
+        setEmployeeId('');
+      } else {
+        alert('Nepavyko ištrinti darbuotojo');
+      }
     })
-      .then(response => {
-        if (response.ok) {
-          alert('Darbuotojas sėkmingai ištrintas');
-          setEmployeeId('');
-        } else {
-          alert('Nepavyko ištrinti darbuotojo');
-        }
-      })
-      .catch(error => {
-        console.error('Klaida:', error);
-        alert('Įvyko klaida');
-      });
-  };
+    .catch(error => {
+      console.error('Klaida:', error);
+      alert('Įvyko klaida');
+    });
+};
+
 
   return (
     <div className="delete-employee-container">
