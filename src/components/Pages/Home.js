@@ -8,6 +8,7 @@ function Home() {
             <nav className="home-nav">
                 <Link to="/employeeform">Darbuotojai</Link>
                 <Link to="/shiftform">Pamainos</Link>
+                <a href="/login">Prisijungimas</a>
 
 
             </nav>
