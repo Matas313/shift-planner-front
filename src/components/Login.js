@@ -1,39 +1,43 @@
+// src/components/Login.js
+
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
-  const [email, setEmail] = useState('');
+function Login({ setRole }) {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Prisijungimo duomenys:', { email, password });
-    alert(`Bandai prisijungti su:\nEmail: ${email}\nPassword: ${password}`);
+  const handleLogin = () => {
+    if (username === 'admin' && password === 'admin') {
+      setRole('admin');
+      navigate('/employees');
+    } else if (username === 'worker' && password === 'worker') {
+      setRole('employee');
+      navigate('/myshifts');
+    } else {
+      setError('Neteisingi prisijungimo duomenys');
+    }
   };
 
   return (
     <div>
       <h2>Prisijungimas</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label><br />
-          <input
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Slaptažodis:</label><br />
-          <input
-            type="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Prisijungti</button>
-      </form>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <input
+        type="text"
+        placeholder="Vartotojo vardas"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      /><br/>
+      <input
+        type="password"
+        placeholder="Slaptažodis"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      /><br/>
+      <button onClick={handleLogin}>Prisijungti</button>
     </div>
   );
 }
