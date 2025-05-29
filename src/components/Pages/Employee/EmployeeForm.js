@@ -7,7 +7,7 @@ const EmployeeForm = () => {
     name: '',
     email: '',
     phone: '',
-    possition: ''
+    position: ''
   });
 
   const handleChange = (e) => {
@@ -17,15 +17,16 @@ const EmployeeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:8080/employees', {
+    const response = await fetch('http://localhost:8080/admins/addemployees', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(employee)
     });
+    
 
     if (response.ok) {
       alert('Darbuotojas pridėtas!');
-      setEmployee({ name: '', email: '', phone: '', possition: '' });
+      setEmployee({ name: '', email: '', phone: '', position: '' });
     } else {
       alert('Klaida pridedant darbuotoją');
     }
@@ -37,7 +38,7 @@ const EmployeeForm = () => {
       <input name="name" placeholder="Vardas" value={employee.name} onChange={handleChange} />
       <input name="email" placeholder="El. paštas" value={employee.email} onChange={handleChange} />
       <input name="phone" placeholder="Telefonas" value={employee.phone} onChange={handleChange} />
-      <input name="possition" placeholder="Pareigos" value={employee.possition} onChange={handleChange} />
+      <input name="position" placeholder="Pareigos" value={employee.position} onChange={handleChange} />
       <button type="submit">Pridėti</button>
     </form>
   );

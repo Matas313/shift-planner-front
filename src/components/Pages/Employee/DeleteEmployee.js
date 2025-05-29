@@ -10,7 +10,7 @@ function DeleteEmployee() {
     return;
   }
 
-  fetch(`http://localhost:8080/admins/${employeeId}`, {
+  fetch(`http://localhost:8080/admins/employee/${employeeId}`, {
     method: 'DELETE'
   })
     .then(response => {
