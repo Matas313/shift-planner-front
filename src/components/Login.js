@@ -1,4 +1,4 @@
-// src/components/Login.js
+import './Login.css';
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ function Login({ setRole }) {
     if (username === 'admin' && password === 'admin') {
       setRole('admin');
       navigate('/employees');
-    } else if (username === 'worker' && password === 'worker') {
+    } else if (username === 'darbuotojas' && password === 'darb') {
       setRole('employee');
       navigate('/myshifts');
     } else {

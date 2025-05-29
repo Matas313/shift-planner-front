@@ -1,19 +1,32 @@
 import { Link } from 'react-router-dom';
-import './Header.css';
+import './Header.css'
 
-function Header() {
+function Header({ role, setRole }) {
+  const handleLogout = () => {
+    setRole(null);
+    localStorage.removeItem('role');
+  };
+
   return (
-    <header className="header">
-      <nav className="nav-links">
-        <Link to="/">Pagrindinis</Link>
-        <Link to="/employees">Darbuotojai</Link>
-        <Link to="/shiftform">Pamainos</Link>
-        <Link to="/login">Prisijungimas</Link>
+    <nav>
+      <Link to="/">Pagrindinis</Link>{" "}
+      {!role && <Link to="/login">Prisijungti</Link>}
 
+      {role === 'admin' && (
+        <>
+          <Link to="/employees">Darbuotojai</Link>
+          <Link to="/shiftform">Pamainos</Link>
+          <button onClick={handleLogout}>Atsijungti</button>
+        </>
+      )}
 
-
-      </nav>
-    </header>
+      {role === 'employee' && (
+        <>
+          <Link to="/myshifts">Mano pamainos</Link>
+          <button onClick={handleLogout}>Atsijungti</button>
+        </>
+      )}
+    </nav>
   );
 }
 
