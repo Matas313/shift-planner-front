@@ -16,6 +16,7 @@ function Header({ role, setRole }) {
         <>
           <Link to="/employees">Darbuotojai</Link>
           <Link to="/shiftform">Pamainos</Link>
+          <Link to="/admin">Admin</Link>
           <button onClick={handleLogout}>Atsijungti</button>
         </>
       )}

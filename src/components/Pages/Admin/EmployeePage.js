@@ -6,6 +6,7 @@ import AllEmployees from './AllEmployees';
 
 function EmployeePage() {
   const [showAllEmployees, setShowAllEmployees] = useState(false);
+  const [showAllAdmins, setShowAllAdmins] = useState(false);
 
   return (
     <div>

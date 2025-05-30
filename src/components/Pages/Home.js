@@ -6,9 +6,10 @@ function Home() {
         <div className="home-container">
             <h1>shift-planner</h1>
             <nav className="home-nav">
-                <Link to="/employeeform">Darbuotojai</Link>
+                <Link to="/employees">Darbuotojai</Link>
                 <Link to="/shiftform">Pamainos</Link>
-                <a href="/login">Prisijungimas</a>
+                <Link to="/login">Prisijungimas</Link>
+                <Link to="/admin">Admin</Link>
 
 
             </nav>

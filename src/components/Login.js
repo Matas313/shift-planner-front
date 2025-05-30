@@ -12,7 +12,7 @@ function Login({ setRole }) {
   const handleLogin = () => {
     if (username === 'admin' && password === 'admin') {
       setRole('admin');
-      navigate('/employees');
+      navigate('/');
     } else if (username === 'darbuotojas' && password === 'darb') {
       setRole('employee');
       navigate('/myshifts');

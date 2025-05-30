@@ -6,6 +6,7 @@ import EmployeePage from './components/Pages/Admin/EmployeePage';
 import ShiftPage from './components/Pages/Shift/ShiftPage';
 import Login from './components/Login';
 import MyShifts from './components/Pages/Employee/MyShifts';
+import AdminPage from './components/Pages/Admin/AdminPage';
 import { useState } from 'react';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <>
             <Route path="/employees" element={<EmployeePage />} />
             <Route path="/shiftform" element={<ShiftPage />} />
+            <Route path="/admin" element={<AdminPage />} />
           </>
         )}
 

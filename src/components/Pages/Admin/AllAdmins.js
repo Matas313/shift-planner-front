@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-function AllEmployees() {
-  const [employees, setEmployees] = useState([]);
+function AllAdmins() {
+  const [admins, setAdmins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/admins/allemployees')
+    fetch('http://localhost:8080/admins')
       .then(response => {
         if (!response.ok) {
           throw new Error('Tinklo klaida');
@@ -14,7 +14,7 @@ function AllEmployees() {
         return response.json();
       })
       .then(data => {
-        setEmployees(data);
+        setAdmins(data);
         setLoading(false);
       })
       .catch(err => {
@@ -28,18 +28,17 @@ function AllEmployees() {
 
   return (
     <div>
-      <h3>Visi darbuotojai:</h3>
+      <h3>Visi admin:</h3>
       <ul>
-  {employees.map(emp => (
-    <li key={emp.id}>
-      {emp.name} ({emp.position}){' '}
-      {emp.shift ? `Pamaina: ${emp.shift.name}` : '(Nepaskirta pamaina)'}
-    </li>
-  ))}
-</ul>
+        {admins.map(emp => (
+          <li key={emp.id}>
+            {emp.name} ({emp.position}){' '}
+          </li>
+        ))}
+      </ul>
 
     </div>
   );
 }
 
-export default AllEmployees;
+export default AllAdmins;
