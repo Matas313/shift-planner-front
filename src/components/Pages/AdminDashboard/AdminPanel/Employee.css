@@ -1,0 +1,132 @@
+/* Box-sizing visiems elementams */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Forma */
+.employee-form {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Antraštė formoje */
+.employee-form h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Input laukeliai */
+.employee-form input,
+.employee-form select {
+  width: 100%;
+  max-width: 100%; /* Svarbu */
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.employee-form input:focus,
+.employee-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Mygtukai */
+.employee-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.employee-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  margin-right: 10px;
+}
+
+.employee-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.employee-form button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+.employee-form button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+/* Darbuotojų sąrašas */
+.employee-list {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+}
+
+.employee-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.employee-list li .info {
+  max-width: 70%;
+}
+
+.employee-list li .info p {
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.employee-list li .info small {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Mygtukai redagavimui/ištrynimui */
+.employee-list li .buttons button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.employee-list li .buttons button.edit {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.employee-list li .buttons button.edit:hover {
+  background-color: #e0a800;
+}
+
+.employee-list li .buttons button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.employee-list li .buttons button.delete:hover {
+  background-color: #b02a37;
+}
